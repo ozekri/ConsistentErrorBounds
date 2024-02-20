@@ -16,4 +16,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](https://github.com/ozekri/projection/blob/main/LICENSE)
+[MIT](https://github.com/ozekri/ConsistentErrorBounds/blob/main/LICENSE)
