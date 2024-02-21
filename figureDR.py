@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from utils import DR
+from utils import DR, DR1
 
 ### Initialization
 
@@ -11,7 +11,8 @@ x_0 = np.array([1,1,1]) #format [z,y,x]
 
 
 #DR iterates
-x_DR,d_DR,y_DR,d_y_DR = DR(x_0,10**2)
+#x_DR,d_DR,y_DR,d_y_DR = DR(x_0,10**2)
+x_DR,d_DR,y_DR,d_y_DR = DR1(x_0,10**2)
 
 #Intersection C
 u = np.linspace(-5,0)
@@ -38,12 +39,13 @@ ax.scatter(np.array(y_DR)[:,2],np.array(y_DR)[:,1],np.array(y_DR)[:,0],color='re
 # Can set your view from different angles
 ax.view_init(azim=10, elev=10)
 ax.set_zlim(-1,1)
-ax.set_ylim(-0.25,1)
+ax.set_ylim(0,1)
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.set_zlabel("z")
 plt.title("DR, starting (1,1,1)")
 plt.legend()
+plt.tight_layout()
 plt.show()
 
 
@@ -58,13 +60,16 @@ plt.loglog(k,k**(-0.5),color='black')
 plt.loglog(k,k**(-0.4),color='black')
 plt.loglog(k,k**(-0.3),color='black')
 """
-plt.semilogx(k[:len(d_DR)-1],d_DR[1:],color='green',label=r"$d_C(x_k)$")
-plt.semilogx(k[:len(d_y_DR)-1],d_y_DR[1:],color='red',label=r"$d_C(y_k)$")
+#plt.semilogx(k[:len(d_DR)-1],d_DR[1:],color='green',label=r"$d_C(x_k)$")
+#plt.semilogx(k[:len(d_y_DR)-1],d_y_DR[1:],color='red',label=r"$d_C(y_k)$")
 
+plt.loglog(k[:len(d_DR)-1],d_DR[1:],color='green',label=r"$d_C(x_k)$")
+plt.loglog(k[:len(d_y_DR)-1],d_y_DR[1:],color='red',label=r"$d_C(y_k)$")
 
 plt.xlabel("k")
 plt.ylabel(r'$d_C(x_k),d_C(y_k)$')
-plt.ylim(0,d_DR[0])
+#plt.ylim(0,d_DR[0])
 plt.title("DR, starting (1,1,1)")
 plt.legend()
+plt.tight_layout()
 plt.show()
