@@ -65,3 +65,22 @@ def DR(x0,niter):
         dist_c_y.append(np.linalg.norm(proj_C(y) - y))
         k+=1
     return x_values,dist_c,y_values,dist_c_y
+
+def DR1(x0,niter):
+    k=0
+    x=x0
+    x_values=[x0]
+    y_values=[]
+    dist_c=[np.linalg.norm(proj_C(x0) - x0)]
+    dist_c_y=[]
+    while k<niter:
+        if isinC(x) : return x_values,dist_c
+        y = np.array(pe.projprimalexpcone(x)[0])
+        z = np.array(proj_v2(2*y-x))
+        x = x + z-y
+        x_values.append(x)
+        y_values.append(y)
+        dist_c.append(np.linalg.norm(proj_C(x) - x))
+        dist_c_y.append(np.linalg.norm(proj_C(y) - y))
+        k+=1
+    return x_values,dist_c,y_values,dist_c_y
