@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 from utils import CPA
 from matplotlib import cm
 
@@ -30,7 +31,7 @@ frames = 71
 c=0
 c0=1
 # Generate each frame
-for n in range(frames//2 -10):
+for n in tqdm(range(frames//2 -10)):
     fig = plt.figure(figsize=(10, 10))
     ax = fig.add_subplot(111, projection='3d')
     ax.view_init(azim=110 + frames//2 -c0, elev=20)
@@ -49,7 +50,7 @@ for n in range(frames//2 -10):
     plt.close()
     c0+=1
 
-for n in range(-10 + frames//2,frames):
+for n in tqdm(range(-10 + frames//2,frames)):
     fig = plt.figure(figsize=(10, 10))
     ax = fig.add_subplot(111, projection='3d')
     ax.view_init(azim=109 +10-c, elev=20)
