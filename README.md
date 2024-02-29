@@ -2,10 +2,10 @@
 Code for the paper "Consitent Error Bounds"
 
 <p align="center">
-<img src="https://github.com/ozekri/projection/blob/main/POCS_Exponential_cone_0.gif" width=50% height=50% alt>
+<img src="https://github.com/ozekri/ConsistentErrorBounds/blob/main/gif_saves/render.gif" width=50% height=50% alt>
 </p>
 
-<em>Gif animation of POCS algorithm between the exponential cone and the plane </em> $z=0$.
+<em>Gif animation of CPA algorithm between the exponential cone and the plane </em> $z=0$.
 
 ## Contributing
 
