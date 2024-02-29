@@ -1,6 +1,9 @@
 # Consistent Error Bounds
 Code for the paper "Consitent Error Bounds"
 
+
+*It seems that the iterates of our algorithm converge on the intersection of these two sets! But how fast?*
+
 <p align="center">
 <img src="https://github.com/ozekri/ConsistentErrorBounds/blob/main/gif_saves/render.gif" width=50% height=50% alt>
 </p>
